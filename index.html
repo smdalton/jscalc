@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>JS Calc</title>
+	</head>
+
+	<body>
+		<div class="calculator-border">
+
+			<div id="calc-container" class="grid-container">
+				<!--Buttons-->
+				<!--div.number$*11{$}*11-->
+				<div class="output" ><span id="display">0</span></div>
+				<div class="all_clear btn-control">AC</div>
+				<div class="negate btn-control">+/-</div>
+				<div class="percent btn-control">%</div>
+				<div class="number1 btn-number"><span>1</span></div>
+				<div class="number2 btn-number"><span>2</span></div>
+				<div class="number3 btn-number"><span>3</span></div>
+				<div class="number4 btn-number"><span>4</span></div>
+				<div class="number5 btn-number"><span>5</span></div>
+				<div class="number6 btn-number"><span>6</span></div>
+				<div class="number7 btn-number"><span>7</span></div>
+				<div class="number8 btn-number"><span>8</span></div>
+				<div class="number9 btn-number"><span>9</span></div>
+				<div class="number0 btn-number"><span>0</span></div>
+				<div class="decimal btn-number"><span>.</span></div>
+				<div class="evaluate grid-operator btn-operator"><span>=</span></div>
+				<div class="divide grid-operator btn-operator"><span>/</span></div>
+				<div class="multiply grid-operator btn-operator"><span>*</span></div>
+				<div class="subtract grid-operator btn-operator"><span>-</span></div>
+				<div class="add grid-operator btn-operator"><span>+</span></div>
+
+			</div>
+
+		</div>
+	</body>
+</html>
+<script>
+	main = ()=>{
+		let currentNum = '';
+		let opstack = '';
+		let result = 0;
+
+		//should have just used a giant switch case statement
+
+		//If an operator is pushed then we append the currentNum onto the stack, the operator as well
+		// and then set the currentNum to empty
+		writeOutput = ()=>{
+			document.getElementById('display').innerHTML = result
+		}
+
+
+		calculate = () =>{
+			if(!opstack){
+				return;
+			}
+			result = eval(opstack)
+			writeOutput();
+			opstack = '';
+			console.log('Result is ', result);				return;
+		}
+
+		handleControl = (e) =>{
+			if(e.target.innerText === 'AC'){
+				result = 0;
+				writeOutput();
+			}
+			if(e.target.innerText === '+/-'){
+				
+			}
+			if(e.target.innerText === '%'){
+				
+			}
+
+		}
+
+		handleInput = (e)=>{
+			if(e.target.innerText === '='){
+				calculate();
+				return;
+			};
+			console.log('Pressed a something!',e.target.innerText);
+			opstack = opstack + String(e.target.innerText);
+			console.log('adding number to opstack',opstack);
+		}
+		
+		
+
+		init = () =>{
+			//listen on numbers
+			[...document.getElementsByClassName('btn-number')].forEach((e)=>{
+				e.addEventListener("click",handleInput)
+			});
+			//listen on operators
+			[...document.getElementsByClassName('btn-operator')].forEach((e)=>{
+				e.addEventListener("click",handleInput)
+			});
+			//listen on controls
+			[...document.getElementsByClassName('btn-control')].forEach((e)=>{
+				e.addEventListener("click",handleControl)
+			});
+			
+		};
+
+			
+		
+
+
+		init();
+		
+	
+	
+	}
+
+	
+	main()
+</script>
+<link rel="stylesheet" href="./style.css">
