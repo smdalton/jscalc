@@ -1,0 +1,201 @@
+
+.output{
+
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-family: Arial;
+  color: #000000;
+  font-size: 37px;
+  padding: 10px 20px 10px 20px;
+  border: solid #0f1a21 1px;
+  text-decoration: none;
+	text-align:center;
+	vertical-align: middle;
+}
+.btn-operator {
+  background: #ffb700;
+  background-image: -webkit-linear-gradient(top, #ffb700, #ff8c00);
+  background-image: -moz-linear-gradient(top, #ffb700, #ff8c00);
+  background-image: -ms-linear-gradient(top, #ffb700, #ff8c00);
+  background-image: -o-linear-gradient(top, #ffb700, #ff8c00);
+  background-image: linear-gradient(to bottom, #ffb700, #ff8c00);
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  font-family: Georgia;
+  color: whitesmoke;
+  font-size: 42px;
+  padding: 11px 18px 10px 20px;
+  border: solid #858585 1px;
+  text-decoration: none;
+}
+
+.btn-operator:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+.btn-number {
+  background: #f7f7f7;
+  background-image: -webkit-linear-gradient(top, #f7f7f7, #999999);
+  background-image: -moz-linear-gradient(top, #f7f7f7, #999999);
+  background-image: -ms-linear-gradient(top, #f7f7f7, #999999);
+  background-image: -o-linear-gradient(top, #f7f7f7, #999999);
+  background-image: linear-gradient(to bottom, #f7f7f7, #999999);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 2px;
+	border-style:solid;
+border-width: 1px;
+	border-color:black;
+  text-align:center;
+  font-family: Georgia;
+  color: #000000;
+  font-size: 41px;
+  padding: 10px 18px 10px 20px;
+  text-decoration: none;
+}
+
+.btn-number:hover {
+  background: #d4d4d4;
+  background-image: -webkit-linear-gradient(top, #d4d4d4, #787878);
+  background-image: -moz-linear-gradient(top, #d4d4d4, #787878);
+  background-image: -ms-linear-gradient(top, #d4d4d4, #787878);
+  background-image: -o-linear-gradient(top, #d4d4d4, #787878);
+  background-image: linear-gradient(to bottom, #d4d4d4, #787878);
+  text-decoration: none;
+}
+
+.btn-control {
+  background: #cad100;
+  background-image: -webkit-linear-gradient(top, #cad100, #fff694);
+  background-image: -moz-linear-gradient(top, #cad100, #fff694);
+  background-image: -ms-linear-gradient(top, #cad100, #fff694);
+  background-image: -o-linear-gradient(top, #cad100, #fff694);
+  background-image: linear-gradient(to bottom, #cad100, #fff694);
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  font-family: Arial;
+  color: #030303;
+text-align: center;
+  font-size: 41px;
+  padding: 15px 15px 15px 20px;
+  border: solid #d9b54a 2px;
+  text-decoration: none;
+}
+
+.btn-control:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.grid-container {
+	width: 390px;
+	display:grid;
+	grid-template-columns: repeat(4);
+	
+	grid-auto-rows: 75px;
+	grid-template-areas:
+		"a a a a"
+		"all_clear negate percent divide"
+		"number1 number2 number3 multiply"
+		"number4 number5 number6 subtract"
+		"number7 number8 number9 add"
+		"number0 number0 decimal evaluate"
+		
+}
+
+.all_clear{
+	grid-area: all_clear;
+
+}
+
+.negate{
+	grid-area: negate;
+}
+
+.percent{
+	grid-area: percent;
+}
+
+.output{
+	background-color: palevioletred;
+	grid-area: a;
+
+}
+
+/* Number container*/
+.number1{
+	grid-area:number1;
+
+}
+.number2{
+	grid-area:number2;
+
+}
+.number3{
+	grid-area:number3;
+
+}
+.number4{
+	grid-area:number4;
+}
+.number5{
+	grid-area:number5;
+}
+
+.number6{
+	grid-area:number6;
+}
+.number7{
+	grid-area:number7;
+}
+.number8{
+	grid-area:number8;
+}
+.number9{
+	grid-area:number9;
+}
+
+.number0{
+	grid-area:number0;
+}
+
+.decimal{
+	grid-area:decimal;
+}
+.grid-operator {
+	border-color:orange;
+}
+.divide{
+	grid-area: divide;
+}
+.multiply{
+	grid-area:multiply;
+}
+.subtract{
+	grid-area:subtract;
+}
+
+.add{
+	grid-area:add;
+}
+/*Operator container*/
+.evaluate{
+	grid-area:evaluate;
+}
+
+.grid-operator {
+	
+}
